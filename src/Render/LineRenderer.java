@@ -1,7 +1,6 @@
 package Render;
 
 import Objects.Line;
-import Objects.Point;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -102,15 +101,15 @@ public class LineRenderer extends Renderer {
         double xend = Math.round(x0);
         double yend = y0 + gradient * (xend - x0);
         double xgap = rfpart(x0 + 0.5);
-        double xpxl1 = xend;
-        double ypxl1 = ipart(yend);
+        double x11 = xend;
+        double y11 = ipart(yend);
 
         if (steep) {
-            plot(ypxl1, xpxl1, rfpart(yend) * xgap);
-            plot(ypxl1 + 1, xpxl1, fpart(yend) * xgap);
+            draw(y11, x11, rfpart(yend) * xgap);
+            draw(y11 + 1, x11, fpart(yend) * xgap);
         } else {
-            plot(xpxl1, ypxl1, rfpart(yend) * xgap);
-            plot(xpxl1, ypxl1 + 1, fpart(yend) * xgap);
+            draw(x11, y11, rfpart(yend) * xgap);
+            draw(x11, y11 + 1, fpart(yend) * xgap);
         }
 
         double intery = yend + gradient;
@@ -118,30 +117,30 @@ public class LineRenderer extends Renderer {
         xend = Math.round(x1);
         yend = y1 + gradient * (xend - x1);
         xgap = fpart(x1 + 0.5);
-        double xpxl2 = xend;
-        double ypxl2 = ipart(yend);
+        double x12 = xend;
+        double y12 = ipart(yend);
 
         if (steep) {
-            plot(ypxl2, xpxl2, rfpart(yend) * xgap);
-            plot(ypxl2 + 1, xpxl2, fpart(yend) * xgap);
+            draw(y12, x12, rfpart(yend) * xgap);
+            draw(y12 + 1, x12, fpart(yend) * xgap);
         } else {
-            plot(xpxl2, ypxl2, rfpart(yend) * xgap);
-            plot(xpxl2, ypxl2 + 1, fpart(yend) * xgap);
+            draw(x12, y12, rfpart(yend) * xgap);
+            draw(x12, y12 + 1, fpart(yend) * xgap);
         }
 
-        for (double x = xpxl1 + 1; x <= xpxl2 - 1; x++) {
+        for (double x = x11 + 1; x <= x12 - 1; x++) {
             if (steep) {
-                plot(ipart(intery), x, rfpart(intery));
-                plot(ipart(intery) + 1, x, fpart(intery));
+                draw(ipart(intery), x, rfpart(intery));
+                draw(ipart(intery) + 1, x, fpart(intery));
             } else {
-                plot(x, ipart(intery), rfpart(intery));
-                plot( x, ipart(intery) + 1, fpart(intery));
+                draw(x, ipart(intery), rfpart(intery));
+                draw( x, ipart(intery) + 1, fpart(intery));
             }
             intery = intery + gradient;
         }
     }
 
-    public void plot( double x, double y, double c) {
+    public void draw(double x, double y, double c) {
         Graphics gr = img.getGraphics();
         gr.setColor(new Color(0f, 0f, 0f, (float)c));
         gr.fillOval((int) x, (int) y, 2, 2);

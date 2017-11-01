@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Render/CircleRenderer.java" afterPath="$PROJECT_DIR$/src/Render/CircleRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PRGF_Ukol1/Render/CircleRenderer.class" afterPath="$PROJECT_DIR$/out/production/PRGF_Ukol1/Render/CircleRenderer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PRGF_Ukol1/Render/LineRenderer.class" afterPath="$PROJECT_DIR$/out/production/PRGF_Ukol1/Render/LineRenderer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Render/LineRenderer.java" afterPath="$PROJECT_DIR$/src/Render/LineRenderer.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,7 +66,7 @@
       <file leaf-file-name="Canvas.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App/Canvas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2414">
+            <state relative-caret-position="-34">
               <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -92,8 +95,8 @@
       <file leaf-file-name="PolygonRenderer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Render/PolygonRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="52" />
+            <state relative-caret-position="221">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,17 +104,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LineRenderer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LineRenderer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Render/LineRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="80" column="7" lean-forward="false" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
+            <state relative-caret-position="68">
+              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#lineDda#0;class#LineRenderer#0" expanded="false" />
                 <element signature="method#drawLine#0;class#LineRenderer#0" expanded="false" />
                 <element signature="method#drawLineAa#0;class#LineRenderer#0" expanded="false" />
-                <element signature="method#plot#0;class#LineRenderer#0" expanded="false" />
+                <element signature="method#draw#0;class#LineRenderer#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -157,13 +159,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CircleRenderer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CircleRenderer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Render/CircleRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="65" column="17" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+            <state relative-caret-position="611">
+              <caret line="68" column="40" lean-forward="true" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#drawMidpoint#0;class#CircleRenderer#0" expanded="false" />
                 <element signature="e#1362#1363#0" expanded="true" />
                 <element signature="e#1450#1451#0" expanded="true" />
               </folding>
@@ -208,11 +211,11 @@
         <option value="$PROJECT_DIR$/src/Objects/Polygon.java" />
         <option value="$PROJECT_DIR$/src/Render/PolygonRenderer.java" />
         <option value="$PROJECT_DIR$/src/Objects/Line.java" />
-        <option value="$PROJECT_DIR$/src/Render/LineRenderer.java" />
         <option value="$PROJECT_DIR$/src/Objects/Point.java" />
         <option value="$PROJECT_DIR$/src/Objects/Circle.java" />
         <option value="$PROJECT_DIR$/src/App/Canvas.java" />
         <option value="$PROJECT_DIR$/src/Render/CircleRenderer.java" />
+        <option value="$PROJECT_DIR$/src/Render/LineRenderer.java" />
       </list>
     </option>
   </component>
@@ -476,12 +479,12 @@
       <workItem from="1509399644858" duration="306000" />
       <workItem from="1509400106400" duration="109000" />
       <workItem from="1509492587307" duration="12642000" />
-      <workItem from="1509505300643" duration="9705000" />
+      <workItem from="1509505300643" duration="10319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59472000" />
+    <option name="totallyTimeSpent" value="60086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
@@ -495,7 +498,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32901752" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901752" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977912" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -598,11 +601,10 @@
         <state relative-caret-position="1020">
           <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#lineDda#0;class#LineRenderer#0" expanded="false" />
             <element signature="method#drawLine#0;class#LineRenderer#0" expanded="false" />
             <element signature="method#drawLineAa#0;class#LineRenderer#0" expanded="false" />
-            <element signature="method#plot#0;class#LineRenderer#0" expanded="false" />
+            <element signature="method#draw#0;class#LineRenderer#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -621,6 +623,7 @@
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#drawMidpoint#0;class#CircleRenderer#0" expanded="false" />
             <element signature="e#1362#1363#0" expanded="true" />
             <element signature="e#1450#1451#0" expanded="true" />
           </folding>
@@ -692,6 +695,7 @@
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#drawMidpoint#0;class#CircleRenderer#0" expanded="false" />
             <element signature="e#1362#1363#0" expanded="true" />
             <element signature="e#1450#1451#0" expanded="true" />
           </folding>
@@ -719,11 +723,10 @@
         <state relative-caret-position="1173">
           <caret line="70" column="23" lean-forward="true" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#lineDda#0;class#LineRenderer#0" expanded="false" />
             <element signature="method#drawLine#0;class#LineRenderer#0" expanded="false" />
             <element signature="method#drawLineAa#0;class#LineRenderer#0" expanded="false" />
-            <element signature="method#plot#0;class#LineRenderer#0" expanded="false" />
+            <element signature="method#draw#0;class#LineRenderer#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -777,6 +780,7 @@
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#drawMidpoint#0;class#CircleRenderer#0" expanded="false" />
             <element signature="e#1362#1363#0" expanded="true" />
             <element signature="e#1450#1451#0" expanded="true" />
           </folding>
@@ -804,11 +808,10 @@
         <state relative-caret-position="323">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#lineDda#0;class#LineRenderer#0" expanded="false" />
             <element signature="method#drawLine#0;class#LineRenderer#0" expanded="false" />
             <element signature="method#drawLineAa#0;class#LineRenderer#0" expanded="false" />
-            <element signature="method#plot#0;class#LineRenderer#0" expanded="false" />
+            <element signature="method#draw#0;class#LineRenderer#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -862,6 +865,7 @@
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#drawMidpoint#0;class#CircleRenderer#0" expanded="false" />
             <element signature="e#1362#1363#0" expanded="true" />
             <element signature="e#1450#1451#0" expanded="true" />
           </folding>
@@ -889,11 +893,10 @@
         <state relative-caret-position="306">
           <caret line="18" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#lineDda#0;class#LineRenderer#0" expanded="false" />
             <element signature="method#drawLine#0;class#LineRenderer#0" expanded="false" />
             <element signature="method#drawLineAa#0;class#LineRenderer#0" expanded="false" />
-            <element signature="method#plot#0;class#LineRenderer#0" expanded="false" />
+            <element signature="method#draw#0;class#LineRenderer#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -923,10 +926,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Render/PolygonRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objects/Polygon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addPoint#0;class#Polygon#0" expanded="false" />
+            <element signature="method#getPoints#0;class#Polygon#0" expanded="false" />
+            <element signature="method#delPoints#0;class#Polygon#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Objects/Line.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="23" lean-forward="false" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objects/Circle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -947,46 +981,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Render/LineRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="80" column="7" lean-forward="false" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#lineDda#0;class#LineRenderer#0" expanded="false" />
-            <element signature="method#drawLine#0;class#LineRenderer#0" expanded="false" />
-            <element signature="method#drawLineAa#0;class#LineRenderer#0" expanded="false" />
-            <element signature="method#plot#0;class#LineRenderer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objects/Polygon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#addPoint#0;class#Polygon#0" expanded="false" />
-            <element signature="method#getPoints#0;class#Polygon#0" expanded="false" />
-            <element signature="method#delPoints#0;class#Polygon#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Render/PolygonRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App/Canvas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2414">
+        <state relative-caret-position="-34">
           <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -996,22 +993,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objects/Circle.java">
+    <entry file="file://$PROJECT_DIR$/src/Render/CircleRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="611">
+          <caret line="68" column="40" lean-forward="true" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#drawMidpoint#0;class#CircleRenderer#0" expanded="false" />
+            <element signature="e#1362#1363#0" expanded="true" />
+            <element signature="e#1450#1451#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Render/CircleRenderer.java">
+    <entry file="file://$PROJECT_DIR$/src/Render/LineRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="65" column="17" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+        <state relative-caret-position="68">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1362#1363#0" expanded="true" />
-            <element signature="e#1450#1451#0" expanded="true" />
+            <element signature="method#lineDda#0;class#LineRenderer#0" expanded="false" />
+            <element signature="method#drawLine#0;class#LineRenderer#0" expanded="false" />
+            <element signature="method#drawLineAa#0;class#LineRenderer#0" expanded="false" />
+            <element signature="method#draw#0;class#LineRenderer#0" expanded="false" />
           </folding>
         </state>
       </provider>
