@@ -105,6 +105,9 @@ public class LineRenderer extends Renderer {
         double xpxl1 = xend;
         double ypxl1 = ipart(yend);
 
+        if (dx == 0 )
+            dx = 0;
+
         if (steep) {
             plot(ypxl1, xpxl1, rfpart(yend) * xgap);
             plot(ypxl1 + 1, xpxl1, fpart(yend) * xgap);
