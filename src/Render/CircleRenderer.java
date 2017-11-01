@@ -8,8 +8,6 @@ import java.awt.image.BufferedImage;
 
 public class CircleRenderer extends Renderer {
 
-    private LineRenderer lr = new LineRenderer(img);
-
     public CircleRenderer (BufferedImage img) {
             super(img);
         }
@@ -69,14 +67,12 @@ public class CircleRenderer extends Renderer {
         int y = 0;
         int rad = getRadius(cr);
 
-        lr.drawLine(new Line(cr.getX1(), cr.getY1(), cr.getX2(), cr.getY2(), 0xffffff));
         while (startAngle <= endAngle) {
             x = (int) (cr.getX1() + rad * Math.cos(startAngle));
             y = (int) (cr.getY1() + rad * Math.sin(startAngle));
             try{img.setRGB(x,y,0xffffff);}catch (Exception e){}
             startAngle = startAngle + 0.01;
         }
-        lr.drawLine(new Line(cr.getX1(), cr.getY1(), x, y, 0xffffff));
 
 
     }
