@@ -45,4 +45,5 @@ public class Circle {
     public int getClr() {
         return clr;
     }
+
 }

@@ -128,10 +128,10 @@ public class Canvas {
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                x2 = e.getX();
-                y2 = e.getY();
 
                 if (usBtn.isSelected()) {
+                    x2 = e.getX();
+                    y2 = e.getY();
                     lr.drawLine(new Line(x1,y1,x2,y2, 0xffffff));
                 }
 
@@ -160,6 +160,8 @@ public class Canvas {
                 }
                 else if (vysBtn.isSelected()) {
                     clear();
+                    x2 = e.getX();
+                    y2 = e.getY();
                     cr.drawSec(new Circle(x1,y1,x2,y2, 0xffffff));
                 }
                 present();
