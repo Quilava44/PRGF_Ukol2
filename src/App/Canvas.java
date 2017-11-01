@@ -42,6 +42,7 @@ public class Canvas {
     private JRadioButton kruzBtn;
     private JRadioButton polyBtn;
     private JRadioButton aaBtn;
+    private JRadioButton vysBtn;
     private ButtonGroup grpBtn;
 
     private JButton delBtn;
@@ -79,17 +80,20 @@ public class Canvas {
         aaBtn = new JRadioButton("AA úsečka");
         polyBtn = new JRadioButton("Polygon");
         kruzBtn = new JRadioButton("Kružnice");
+        vysBtn = new JRadioButton("Výseč kružnice");
 
         grpBtn = new ButtonGroup();
         grpBtn.add(usBtn);
         grpBtn.add(polyBtn);
         grpBtn.add(kruzBtn);
         grpBtn.add(aaBtn);
+        grpBtn.add(vysBtn);
 
         menu.add(usBtn);
         menu.add(aaBtn);
         menu.add(polyBtn);
         menu.add(kruzBtn);
+        menu.add(vysBtn);
 
         delBtn = new JButton("Smazat");
 
@@ -153,6 +157,10 @@ public class Canvas {
                 else if (kruzBtn.isSelected()) {
                     clear();
                     cr.drawCircle(new Circle(x1, y1, x2, y2, 0xffffff));
+                }
+                else if (vysBtn.isSelected()) {
+                    clear();
+                    cr.drawSec(new Circle(x1,y1,x2,y2, 0xffffff));
                 }
                 present();
             }
