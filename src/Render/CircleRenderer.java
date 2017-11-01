@@ -63,8 +63,7 @@ public class CircleRenderer extends Renderer {
     public void drawSec(Circle cr) {
         double startAngle = -Math.PI;
         double endAngle = Math.atan2(cr.getY2() - cr.getY1(), cr.getX2() - cr.getX1());
-        int x = 0;
-        int y = 0;
+        int x, y;
         int rad = getRadius(cr);
 
         while (startAngle <= endAngle) {
