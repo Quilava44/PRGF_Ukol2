@@ -79,7 +79,8 @@ public class LineRenderer extends Renderer {
      * AA Usecka, pouzit Xiaolin Wu's line algorithm
      */
 
-    public void drawLineAa (Line ln) {
+
+    public void drawLineAa(Line ln) {
 
         double x0 = ln.getX1();
         double y0 = ln.getY1();
@@ -88,15 +89,31 @@ public class LineRenderer extends Renderer {
 
         boolean steep = Math.abs(y1 - y0) > Math.abs(x1 - x0);
 
-        if (steep)
-            drawLineAa(new Line((int)y0, (int)x0, (int)y1, (int)x1, 0xffffff));
 
-        if (x0 > x1)
-            drawLineAa(new Line((int)x1, (int)y1, (int)x0, (int)y0, 0xffffff));
+        if (steep) {
+            double tmp = x0;
+            x0 = y0;
+            y0 = tmp;
+
+            tmp = x1;
+            x1 = y1;
+            y1 = tmp;
+        }
+        if (x0 > x1) {
+            double tmp = x0;
+            x0 = x1;
+            x1 = tmp;
+
+            tmp = y0;
+            y0 = y1;
+            y1 = tmp;
+        }
 
         double dx = x1 - x0;
         double dy = y1 - y0;
         double gradient = dy / dx;
+        if (dx == 0.0)
+            gradient = 1.0;
 
         double xend = Math.round(x0);
         double yend = y0 + gradient * (xend - x0);
@@ -134,7 +151,7 @@ public class LineRenderer extends Renderer {
                 draw(ipart(intery) + 1, x, fpart(intery));
             } else {
                 draw(x, ipart(intery), rfpart(intery));
-                draw( x, ipart(intery) + 1, fpart(intery));
+                draw(x, ipart(intery) + 1, fpart(intery));
             }
             intery = intery + gradient;
         }
