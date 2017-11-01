@@ -70,7 +70,7 @@ public class CircleRenderer extends Renderer {
             x = (int) (cr.getX1() + rad * Math.cos(startAngle));
             y = (int) (cr.getY1() + rad * Math.sin(startAngle));
             try{img.setRGB(x,y,0xffffff);}catch (Exception e){}
-            startAngle = startAngle + 0.01;
+            startAngle += 0.01;
         }
 
 
