@@ -77,7 +77,7 @@ public class LineRenderer extends Renderer {
     }
 
     /**
-     * AA Usecka, pouzit Xiaolin Wu's line algorithm
+     * AA Usecka, pouzit Xiaolin Wu's line algorithm test
      */
 
     public void drawLineAa (Line ln) {
