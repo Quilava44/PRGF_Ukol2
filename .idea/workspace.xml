@@ -158,8 +158,8 @@
       <file leaf-file-name="CircleRenderer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Render/CircleRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="71" column="45" lean-forward="false" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
+            <state relative-caret-position="527">
+              <caret line="74" column="49" lean-forward="true" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#drawMidpoint#0;class#CircleRenderer#0" expanded="false" />
@@ -476,12 +476,12 @@
       <workItem from="1509505300643" duration="10319000" />
       <workItem from="1509554365362" duration="13000" />
       <workItem from="1509554408407" duration="36000" />
-      <workItem from="1509554918764" duration="179000" />
+      <workItem from="1509554918764" duration="822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60314000" />
+    <option name="totallyTimeSpent" value="60957000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
@@ -990,8 +990,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Render/CircleRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="71" column="45" lean-forward="false" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
+        <state relative-caret-position="527">
+          <caret line="74" column="49" lean-forward="true" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#drawMidpoint#0;class#CircleRenderer#0" expanded="false" />
