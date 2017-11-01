@@ -77,7 +77,7 @@ public class LineRenderer extends Renderer {
     }
 
     /**
-     * AA Usecka, pouzit Xiaolin Wu's line algorithm test
+     * AA Usecka, pouzit Xiaolin Wu's line algorithm
      */
 
     public void drawLineAa (Line ln) {
@@ -104,9 +104,6 @@ public class LineRenderer extends Renderer {
         double xgap = rfpart(x0 + 0.5);
         double xpxl1 = xend;
         double ypxl1 = ipart(yend);
-
-        if (dx == 0 )
-            dx = 0;
 
         if (steep) {
             plot(ypxl1, xpxl1, rfpart(yend) * xgap);
