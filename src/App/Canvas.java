@@ -1,5 +1,6 @@
 package App;
 
+import Fills.ScanLine;
 import Fills.SeedFill;
 import Objects.Circle;
 import Objects.Line;
@@ -38,6 +39,7 @@ public class Canvas {
     private PolygonRenderer pr;
     private CircleRenderer cr;
     private SeedFill sf;
+    private ScanLine sl;
 
     private JPanel menu;
     private JRadioButton usBtn;
@@ -67,6 +69,7 @@ public class Canvas {
         pr = new PolygonRenderer(img);
         cr = new CircleRenderer(img);
         sf = new SeedFill(img);
+        sl = new ScanLine(img);
 
 
        panel = new JPanel() {
@@ -140,6 +143,11 @@ public class Canvas {
                     else if(seedBtn.isSelected())
                     {
                         sf.fill(x1,y1,img.getRGB(x1,y1));
+                    }
+                    else if(scanBtn.isSelected())
+                    {
+                        if (p.getSize() >= 2)
+                            sl.fill(p);
                     }
                     panel.repaint();
                 }
