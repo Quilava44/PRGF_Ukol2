@@ -14,13 +14,13 @@ public class Edge {
 
     public boolean isHorizontal() {
 
-        return ((int)a.getY() == (int)b.getY());
+        return (a.getY() == b.getY());
 
     }
 
     public Edge getOrientedEdge() {
 
-        if (!(a.getY() > b.getY()))
+        if ((a.getY() > b.getY()))
             return new Edge(b,a);
         return this;
 
@@ -37,7 +37,7 @@ public class Edge {
         double k = (b.getX() - a.getX()) / (b.getY() - a.getY());
         double q = a.getX() - k * a.getY();
 
-        return (int)(k * y + q);
+        return (int)((k * y) + q);
 
     }
 

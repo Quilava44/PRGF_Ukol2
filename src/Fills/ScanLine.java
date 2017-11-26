@@ -14,19 +14,20 @@ public class ScanLine extends Renderer {
 
     private List<Edge> edges = new ArrayList<>();
     private List<Integer> inter = new ArrayList<>();
+    Edge edge;
+    LineRenderer lr;
 
     public ScanLine(BufferedImage img) {
 
         super(img);
+        lr = new LineRenderer(img);
 
     }
 
     public void fill(Polygon p) {
 
-        float minY = p.getPoints(0).getY();
-        float maxY = p.getPoints(0).getY();
-
-        LineRenderer lr = new LineRenderer(img);
+        int minY = p.getPoints(0).getY();
+        int maxY = p.getPoints(0).getY();
 
         for (int i = 0; i < p.getSize(); i++) {
 
@@ -38,15 +39,14 @@ public class ScanLine extends Renderer {
             Point a = p.getPoints(i);
             Point b = p.getPoints((i + 1) % p.getSize());
 
-            Edge edge = new Edge(a, b);
+            edge = new Edge(a, b);
 
             if (!edge.isHorizontal())
                 edges.add(edge.getOrientedEdge());
+
         }
 
-        for (int y = (int) minY; y <= (int) maxY; y++) {
-
-            inter.clear();
+        for (int y = minY; y < maxY; y++) {
 
             for (Edge ed : edges)
                 if (ed.isIntersection(y))
@@ -56,6 +56,8 @@ public class ScanLine extends Renderer {
 
             for (int x = 0; x < inter.size() - 1; x += 2)
                 lr.lineDda(inter.get(x), y, inter.get(x + 1), y, 0xff0000);
+
+            inter.clear();
         }
     }
 

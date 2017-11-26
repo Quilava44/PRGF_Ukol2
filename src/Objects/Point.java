@@ -2,19 +2,19 @@ package Objects;
 
 public class Point {
 
-    private final float x;
-    private final float y;
+    private final int x;
+    private final int y;
 
-    public Point(float x, float y) {
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public float getX() {
+    public int getX() {
         return x;
     }
 
-    public float getY() {
+    public int getY() {
         return y;
     }
 }

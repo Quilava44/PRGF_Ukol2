@@ -146,8 +146,7 @@ public class Canvas {
                     }
                     else if(scanBtn.isSelected())
                     {
-                        if (p.getSize() >= 2)
-                            sl.fill(p);
+                        sl.fill(p);
                     }
                     panel.repaint();
                 }
