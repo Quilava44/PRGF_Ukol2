@@ -1,5 +1,6 @@
 package App;
 
+import Fills.SeedFill;
 import Objects.Circle;
 import Objects.Line;
 import Render.CircleRenderer;
@@ -36,6 +37,7 @@ public class Canvas {
     private LineRenderer lr;
     private PolygonRenderer pr;
     private CircleRenderer cr;
+    private SeedFill sf;
 
     private JPanel menu;
     private JRadioButton usBtn;
@@ -43,6 +45,9 @@ public class Canvas {
     private JRadioButton polyBtn;
     private JRadioButton aaBtn;
     private JRadioButton vysBtn;
+    private JRadioButton seedBtn;
+    private JRadioButton seedMat4Btn;
+    private JRadioButton scanBtn;
     private ButtonGroup grpBtn;
 
     private JButton delBtn;
@@ -61,6 +66,7 @@ public class Canvas {
         lr = new LineRenderer(img);
         pr = new PolygonRenderer(img);
         cr = new CircleRenderer(img);
+        sf = new SeedFill(img);
 
 
        panel = new JPanel() {
@@ -81,6 +87,9 @@ public class Canvas {
         polyBtn = new JRadioButton("Polygon");
         kruzBtn = new JRadioButton("Kružnice");
         vysBtn = new JRadioButton("Výseč kružnice");
+        seedBtn = new JRadioButton("Seed fill");
+        seedMat4Btn = new JRadioButton("Seed fill vzor");
+        scanBtn = new JRadioButton("ScanLine fill");
 
         grpBtn = new ButtonGroup();
         grpBtn.add(usBtn);
@@ -88,12 +97,18 @@ public class Canvas {
         grpBtn.add(kruzBtn);
         grpBtn.add(aaBtn);
         grpBtn.add(vysBtn);
+        grpBtn.add(seedBtn);
+        grpBtn.add(seedMat4Btn);
+        grpBtn.add(scanBtn);
 
         menu.add(usBtn);
         menu.add(aaBtn);
         menu.add(polyBtn);
         menu.add(kruzBtn);
         menu.add(vysBtn);
+        menu.add(seedBtn);
+        menu.add(seedMat4Btn);
+        menu.add(scanBtn);
 
         delBtn = new JButton("Smazat");
 
@@ -121,6 +136,10 @@ public class Canvas {
 
                         p.addPoint(new Point(x1,y1));
                         pr.drawPolygon(p);
+                    }
+                    else if(seedBtn.isSelected())
+                    {
+                        sf.fill(x1,y1,img.getRGB(x1,y1));
                     }
                     panel.repaint();
                 }
