@@ -25,4 +25,30 @@ public class SeedFill extends Renderer {
 
     }
 
+    /**
+     * Seed fill se vzorem
+     */
+
+
+    public void fillPattern(int x, int y, int clr) {
+        int [][] clrMat = new int [][]{
+                {0xff7d0a,0x0070de,0x0070de,0x0070de,0x0070de,0x0070de,0xff7d0a},
+                {0x0070de,0xff7d0a,0xff7d0a,0xff7d0a,0xff7d0a,0xff7d0a,0x0070de},
+                {0x0070de,0xff7d0a,0xff7d0a,0xff7d0a,0xff7d0a,0xff7d0a,0x0070de},
+                {0x0070de,0xff7d0a,0xff7d0a,0xff7d0a,0xff7d0a,0xff7d0a,0x0070de},
+                {0x0070de,0xff7d0a,0xff7d0a,0xff7d0a,0xff7d0a,0xff7d0a,0x0070de},
+                {0x0070de,0xff7d0a,0xff7d0a,0xff7d0a,0xff7d0a,0xff7d0a,0x0070de},
+                {0xff7d0a,0x0070de,0x0070de,0x0070de,0x0070de,0x0070de,0xff7d0a}};
+
+        if (x < img.getWidth() && y < img.getHeight() && x > 0 && y > 0) {
+            if (clr == img.getRGB(x, y)) {
+                img.setRGB(x,y, clrMat[x % 7][y % 7]);
+                fillPattern(x + 1,y,clr);
+                fillPattern(x - 1,y,clr);
+                fillPattern(x  ,y + 1,clr);
+                fillPattern(x  ,y - 1,clr);
+            }
+        }
+    }
+
 }

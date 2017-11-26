@@ -141,13 +141,11 @@ public class Canvas {
                         pr.drawPolygon(p);
                     }
                     else if(seedBtn.isSelected())
-                    {
                         sf.fill(x1,y1,img.getRGB(x1,y1));
-                    }
+                    else if(seedMat4Btn.isSelected())
+                        sf.fillPattern(x1,y1,img.getRGB(x1,y1));
                     else if(scanBtn.isSelected())
-                    {
                         sl.fill(p);
-                    }
                     panel.repaint();
                 }
             }
