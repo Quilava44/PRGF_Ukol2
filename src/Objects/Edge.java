@@ -34,8 +34,8 @@ public class Edge {
 
     public int getIntersection(int y) {
 
-        double k = (b.getX() - a.getX()) / (b.getY() - a.getY());
-        double q = a.getX() - k * a.getY();
+        double k = (double)(b.getX() - a.getX()) / (double)(b.getY() - a.getY());
+        double q = (double)a.getX() - k * (double)a.getY();
 
         return (int)((k * y) + q);
 

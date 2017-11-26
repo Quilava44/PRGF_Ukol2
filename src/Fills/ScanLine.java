@@ -59,6 +59,7 @@ public class ScanLine extends Renderer {
 
             inter.clear();
         }
+        edges.clear();
     }
 
     public void selectionSort() {
@@ -66,13 +67,13 @@ public class ScanLine extends Renderer {
         for (int i = 0; i < inter.size()-1; i++)
         {
             int min = i;
-            for (int j = i+1; j < inter.size()-1; j++)
-                if (inter.get(j) < inter.get(min))
+            for (int j = i+1; j < inter.size(); j++)
+                if (inter.get(j) > inter.get(min))
                     min = j;
 
-            int tmp = inter.get(min);
-            inter.set(min, inter.get(i));
-            inter.set(i, tmp);
+            int tmp = inter.get(i);
+            inter.set(i, inter.get(min));
+            inter.set(min, tmp);
         }
     }
 

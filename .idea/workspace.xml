@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PRGF_Ukol2/App/Canvas$2.class" afterPath="$PROJECT_DIR$/out/production/PRGF_Ukol2/App/Canvas$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PRGF_Ukol2/App/Canvas$3.class" afterPath="$PROJECT_DIR$/out/production/PRGF_Ukol2/App/Canvas$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PRGF_Ukol2/App/Canvas.class" afterPath="$PROJECT_DIR$/out/production/PRGF_Ukol2/App/Canvas.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PRGF_Ukol2/Fills/ScanLine.class" afterPath="$PROJECT_DIR$/out/production/PRGF_Ukol2/Fills/ScanLine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PRGF_Ukol2/Objects/Circle.class" afterPath="$PROJECT_DIR$/out/production/PRGF_Ukol2/Objects/Circle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PRGF_Ukol2/Objects/Edge.class" afterPath="$PROJECT_DIR$/out/production/PRGF_Ukol2/Objects/Edge.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PRGF_Ukol2/Objects/Line.class" afterPath="$PROJECT_DIR$/out/production/PRGF_Ukol2/Objects/Line.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/PRGF_Ukol2/Objects/Point.class" afterPath="$PROJECT_DIR$/out/production/PRGF_Ukol2/Objects/Point.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Canvas.java" afterPath="$PROJECT_DIR$/src/App/Canvas.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Fills/ScanLine.java" afterPath="$PROJECT_DIR$/src/Fills/ScanLine.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Objects/Edge.java" afterPath="$PROJECT_DIR$/src/Objects/Edge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Objects/Point.java" afterPath="$PROJECT_DIR$/src/Objects/Point.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -154,8 +145,8 @@
       <file leaf-file-name="ScanLine.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Fills/ScanLine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+            <state relative-caret-position="490">
+              <caret line="39" column="57" lean-forward="true" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,13 +157,13 @@
       <file leaf-file-name="Edge.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Objects/Edge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+            <state relative-caret-position="629">
+              <caret line="37" column="59" lean-forward="true" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
               <folding>
-                <element signature="e#717#718#0" expanded="true" />
-                <element signature="e#741#742#0" expanded="true" />
-                <element signature="e#768#769#0" expanded="true" />
-                <element signature="e#792#793#0" expanded="true" />
+                <element signature="e#749#750#0" expanded="true" />
+                <element signature="e#773#774#0" expanded="true" />
+                <element signature="e#800#801#0" expanded="true" />
+                <element signature="e#824#825#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -539,12 +530,12 @@
       <workItem from="1509559954268" duration="41000" />
       <workItem from="1509561538159" duration="22000" />
       <workItem from="1511368868387" duration="35000" />
-      <workItem from="1511709246562" duration="16686000" />
+      <workItem from="1511709246562" duration="19184000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78702000" />
+    <option name="totallyTimeSpent" value="81200000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
@@ -1065,19 +1056,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Objects/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="32" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding>
-            <element signature="e#717#718#0" expanded="true" />
-            <element signature="e#741#742#0" expanded="true" />
-            <element signature="e#768#769#0" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Objects/Point.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1104,10 +1082,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Objects/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="59" lean-forward="true" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
+          <folding>
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#773#774#0" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#824#825#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Fills/ScanLine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+        <state relative-caret-position="490">
+          <caret line="39" column="57" lean-forward="true" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
