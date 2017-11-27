@@ -5,6 +5,7 @@ import Fills.SeedFill;
 import Objects.Circle;
 import Objects.Line;
 import Render.CircleRenderer;
+import Render.Clipper;
 import Render.LineRenderer;
 import Render.PolygonRenderer;
 import Objects.Polygon;

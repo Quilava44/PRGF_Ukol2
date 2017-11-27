@@ -1,4 +1,4 @@
-package App;
+package Render;
 
 import Objects.Point;
 import Objects.Polygon;
@@ -21,8 +21,8 @@ public class Clipper {
 
         for (Edge edge : clipArea.getEdges()){
             out.clear();
-            Point v1 = in.getPoints(in.getSize()-1);
-            for (Point v2: in.getPointsList()) {
+            Point v1 = in.getPoints(in.getSize() - 1);
+            for (Point v2 : in.getPointsList()) {
                 if (edge.isInside(edge, v2)) {
                     if (!edge.isInside(edge, v1))
                         out.add(edge.getIntersections(new Edge(v1, v2), edge));
@@ -32,7 +32,6 @@ public class Clipper {
                     if (edge.isInside(edge,v1))
                         out.add(edge.getIntersections(new Edge(v1,v2), edge));
                 }
-
                 v1 = v2;
             }
         }

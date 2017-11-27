@@ -42,19 +42,43 @@ public class Edge {
     }
 
     public boolean isInside(Edge edge, Point p) {
-        return (edge.a.getX() - p.getX()) * (edge.b.getY() - p.getY()) > (edge.a.getY() - p.getY()) * (edge.b.getX() - p.getX());
+        int x0 = p.getX();
+        int y0 = p.getY();
+
+        int x1 = edge.a.getX();
+        int x2 = edge.b.getX();
+        int y1 = edge.a.getY();
+        int y2 = edge.b.getY();
+
+        double k = ((y2 - y1) * x0 + (x2 - x1) * y0 + x2 * y1 - y2 * x1);
+
+        if (k < 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public Point getIntersections(Edge a, Edge b) {
-        double x1 = (a.a.getX() * a.b.getY() - a.a.getY() * a.b.getX()) * (b.a.getX() - b.b.getX()) - (a.a.getX() - a.b.getX()) * (b.a.getX() * b.b.getY() - b.a.getY() * b.b.getX());
-        double x2 = (a.a.getX() - a.b.getX()) * (b.a.getY() - b.b.getY()) - (a.a.getY() - a.b.getY()) * (b.a.getX() - b.b.getX());
+        int x1 = a.a.getX();
+        int x2 = a.b.getX();
+        int x3 = b.a.getX();
+        int x4 = b.b.getX();
 
+        int y1 = a.a.getY();
+        int y2 = a.b.getY();
+        int y3 = b.a.getY();
+        int y4 = b.b.getY();
 
-        double y1 = (a.a.getX() * a.b.getY() - a.a.getY() * a.b.getX()) * (b.a.getY() - b.b.getY()) - (a.a.getY() - a.b.getY()) * (b.a.getX() * b.b.getY() - b.a.getY() * b.b.getX());
-        double y2 = (a.a.getX() - a.b.getX()) * (b.a.getY() - b.b.getY()) - (a.a.getY() - a.b.getY()) * (b.a.getX() - b.b.getX());
+        double xtmp1 = (x1 * y2 - x2 * y1) * (x3 - x4) - (x3 * y4 - x4 * y3) * (x1 - x2);
+        double xtmp2 = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
 
-        double x = x1/x2;
-        double y = y1/y2;
+        double ytmp1 = (x1 * y2 - x2 * y1) * (y3 - y4) - (x3 * y4 - x4 * y3) * (y1 - y2);
+        double ytmp2 = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+
+        double x = xtmp1/xtmp2;
+        double y = ytmp1/ytmp2;
 
         return new Point((int)x,(int)y);
 
