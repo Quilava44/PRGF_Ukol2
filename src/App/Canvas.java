@@ -34,12 +34,14 @@ public class Canvas {
     private int x1,y1,x2,y2;
 
     private Polygon p = new Polygon();
+    private Polygon cl = new Polygon();
 
     private LineRenderer lr;
     private PolygonRenderer pr;
     private CircleRenderer cr;
     private SeedFill sf;
     private ScanLine sl;
+    private Clipper pcl;
 
     private JPanel menu;
     private JRadioButton usBtn;
@@ -50,6 +52,7 @@ public class Canvas {
     private JRadioButton seedBtn;
     private JRadioButton seedMat4Btn;
     private JRadioButton scanBtn;
+    private JRadioButton clipBtn;
     private ButtonGroup grpBtn;
 
     private JButton delBtn;
@@ -70,6 +73,7 @@ public class Canvas {
         cr = new CircleRenderer(img);
         sf = new SeedFill(img);
         sl = new ScanLine(img);
+        pcl = new Clipper();
 
 
        panel = new JPanel() {
@@ -93,6 +97,7 @@ public class Canvas {
         seedBtn = new JRadioButton("Seed fill");
         seedMat4Btn = new JRadioButton("Seed fill vzor");
         scanBtn = new JRadioButton("ScanLine fill");
+        clipBtn = new JRadioButton("Ořez Polygonu");
 
         grpBtn = new ButtonGroup();
         grpBtn.add(usBtn);
@@ -103,6 +108,7 @@ public class Canvas {
         grpBtn.add(seedBtn);
         grpBtn.add(seedMat4Btn);
         grpBtn.add(scanBtn);
+        grpBtn.add(clipBtn);
 
         menu.add(usBtn);
         menu.add(aaBtn);
@@ -112,6 +118,7 @@ public class Canvas {
         menu.add(seedBtn);
         menu.add(seedMat4Btn);
         menu.add(scanBtn);
+        menu.add(clipBtn);
 
         delBtn = new JButton("Smazat");
 
@@ -146,7 +153,21 @@ public class Canvas {
                         sf.fillPattern(x1,y1,img.getRGB(x1,y1));
                     else if(scanBtn.isSelected())
                         sl.fill(p);
+                    else if(clipBtn.isSelected()){
+                        clear();
+                        pcl.setClipArea(cl);
+                        pr.drawPolygon(pcl.clip(p));
+                    }
                     panel.repaint();
+                }
+                if (e.getButton() == MouseEvent.BUTTON3){
+                    x1 = e.getX();
+                    y1 = e.getY();
+                    if (clipBtn.isSelected()){
+                        cl.addPoint(new Point(x1,y1));
+                        pr.drawPolygon(cl);
+                    }
+
                 }
             }
 
