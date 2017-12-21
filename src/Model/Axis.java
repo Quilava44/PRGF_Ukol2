@@ -14,8 +14,10 @@ public class Axis extends SolidBase {
 
         indexBuffer.add(0);
         indexBuffer.add(1);
+
         indexBuffer.add(0);
         indexBuffer.add(2);
+
         indexBuffer.add(0);
         indexBuffer.add(3);
 

@@ -76,4 +76,15 @@ public class SolidRenderer {
         secondPoint = tmp;
     }
 
+    public void setModel(Mat4 model) {
+        this.matModel = model;
+    }
+
+    public void setView(Mat4 view) {
+        this.matView = view;
+    }
+
+    public void setProjection(Mat4 projection) {
+        this.matProj = projection;
+    }
 }

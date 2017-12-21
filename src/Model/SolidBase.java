@@ -11,13 +11,4 @@ public abstract class SolidBase {
     public List<Integer> indexBuffer = new ArrayList<>();
 
 
-    public List<Point3D> getVertices() {
-        return vertexBuffer;
-    }
-
-    public List<Integer> getIndices() {
-        return indexBuffer;
-    }
-
-
 }
