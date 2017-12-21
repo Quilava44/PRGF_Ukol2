@@ -7,7 +7,6 @@ import transforms.Point3D;
 import transforms.Vec3D;
 
 import java.awt.image.BufferedImage;
-import java.util.List;
 import java.util.Optional;
 
 public class SolidRenderer {
@@ -15,89 +14,66 @@ public class SolidRenderer {
     private Mat4 matModel;
     private Mat4 matView;
     private Mat4 matProj;
-    private final double wmin = 0.1;
+    private Mat4 matrix;
+    private double minimum = 0.1;
+    private Point3D firstPoint, secondPoint;
 
     private LineRenderer lr;
 
-
-    public void setModel(Mat4 matrix) {
-        this.matModel = matrix;
+    public SolidRenderer(Mat4 m, Mat4 v, Mat4 p) {
+        this.matModel = m;
+        this.matView = v;
+        this.matProj = p;
     }
 
-    public void setView(Mat4 matrix) {
-        this.matView = matrix;
-    }
+    public void draw(SolidBase sb, BufferedImage img, int id) {
 
-    public void setProj(Mat4 matrix) {
-        this.matProj = matrix;
-    }
-
-    public void draw(SolidBase go, BufferedImage img) {
-
-        // Model, View, Projekce - ve 4D vypo��t�me matici pro transformace
+        // Iniciace LineRendereru pro pozdejsi vyuziti u Rasterizace
         lr = new LineRenderer(img);
 
-        Mat4 finalMat = matModel.mul(matView.mul(matProj));
+        //Vypocet Matrix matice
+        matrix = matModel.mul(matView).mul(matProj);
 
-        Vec3D a, b;
+        // Hlavni cyklus
+        for (int i = 0; i < sb.indexBuffer.size(); i += 2) {
 
-        int w = img.getWidth();
-        int h = img.getHeight();
+            // Transformujeme bod
+            firstPoint = sb.vertexBuffer.get(sb.indexBuffer.get(i)).mul(matrix);
+            secondPoint = sb.vertexBuffer.get(sb.indexBuffer.get(i + 1)).mul(matrix);
 
-        for (int i = 0; i < go.indexBuffer.size(); i += 2) {
-            int iA = go.indexBuffer.get(i);
-            int iB = go.indexBuffer.get(i + 1);
+            //Prohozeni bodu pokud W1 < W2
+            if (firstPoint.getW() < secondPoint.getW()) flipPoints();
 
-            Point3D pA = go.vertexBuffer.get(iA);
-            Point3D pB = go.vertexBuffer.get(iB);
-
-            // aplikujeme transformace
-            pA = pA.mul(finalMat);
-            pB = pB.mul(finalMat);
-
-            if (pA.getW() < pB.getW()) {
-                Point3D pom = pA;
-                pA = pB;
-                pB = pom;
+            //Aplikace transformace pokud minimum > W2
+            if (minimum > secondPoint.getW()) {
+                double tmp = (firstPoint.getW() - minimum) / (firstPoint.getW() - secondPoint.getW());
+                secondPoint = firstPoint.mul(1 - tmp).add(secondPoint.mul(tmp));
             }
 
-            if (pB.getW() < wmin) {
-                double t = (pA.getW() - wmin) / (pA.getW() - pB.getW());
-                pB = pA.mul(1 - t).add(pB.mul(t));
+            // Dehomog
+            Optional<Vec3D> firstOptional = firstPoint.dehomog();
+            Optional<Vec3D> secondOptional = secondPoint.dehomog();
 
-            }
+            if (!firstOptional.isPresent() || !secondOptional.isPresent()) continue;
 
-            // zm�n�me 4D na 3D pomoc� dehomogenizace (zbav�me se w)
-            Optional<Vec3D> optA = pA.dehomog();
-            Optional<Vec3D> optB = pB.dehomog();
+            Vec3D firstVector = firstOptional.get();
+            Vec3D secondVector = secondOptional.get();
 
-            if (!optA.isPresent() || !optB.isPresent())
-                continue;
+            //Transform do okna
+            double x1 = ((img.getWidth() - 1) * (firstVector.getX() + 1)) / 2;
+            double y1 = ((img.getHeight() - 1) * (1 - firstVector.getY()) / 2);
+            double x2 = ((img.getWidth() - 1) * (secondVector.getX() + 1)) / 2;
+            double y2 = ((img.getHeight() - 1) * (1 - secondVector.getY()) / 2);
 
-            a = optA.get();
-            b = optB.get();
-
-            // ViewPort transform (tato transformace p�epo��t� do sou�adnic obrazovky)
-			/*
-			 * Posuneme, proto�e nyn� jsou sou�adnice od -1 do 1 tak�e pro x
-			 * vypo��t�me: (1*x+1)*((w-1)/2) w-width buffered image a pro y
-			 * vypo��t�me: (-1*y+1)*((h-1)/2) h-height buffered image
-			 */
-
-            double xATrans = ((a.getX()) + 1) * ((w - 1) / 2);
-            double yATrans = (-1 * (a.getY()) + 1) * ((h - 1) / 2);
-
-            double xBTrans = ((b.getX()) + 1) * ((w - 1) / 2);
-            double yBTrans = (-1 * (b.getY()) + 1) * ((h - 1) / 2);
-
-            // vykreslen�
-            lr.drawLineAa(new Line((int)xATrans, (int)yATrans, (int)xBTrans, (int)yBTrans, 0xffffff));
+            // Rasterizace pomoci AA line algoritmu z predchozich uloh
+            lr.drawLineAa(new Line((int) x1, (int) y1, (int) x2, (int) y2, id));
         }
     }
 
-    public void draw(List<SolidBase> go, BufferedImage img) {
-        for (SolidBase object : go) {
-            draw(object, img);
-        }
+    public void flipPoints() {
+        Point3D tmp = firstPoint;
+        firstPoint = secondPoint;
+        secondPoint = tmp;
     }
+
 }

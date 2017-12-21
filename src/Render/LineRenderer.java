@@ -122,11 +122,11 @@ public class LineRenderer extends Renderer {
         double y11 = ipart(yend);
 
         if (steep) {
-            draw(y11, x11, rfpart(yend) * xgap);
-            draw(y11 + 1, x11, fpart(yend) * xgap);
+            draw(y11, x11, rfpart(yend) * xgap, ln.getClr());
+            draw(y11 + 1, x11, fpart(yend) * xgap, ln.getClr());
         } else {
-            draw(x11, y11, rfpart(yend) * xgap);
-            draw(x11, y11 + 1, fpart(yend) * xgap);
+            draw(x11, y11, rfpart(yend) * xgap, ln.getClr());
+            draw(x11, y11 + 1, fpart(yend) * xgap, ln.getClr());
         }
 
         double intery = yend + gradient;
@@ -138,28 +138,42 @@ public class LineRenderer extends Renderer {
         double y12 = ipart(yend);
 
         if (steep) {
-            draw(y12, x12, rfpart(yend) * xgap);
-            draw(y12 + 1, x12, fpart(yend) * xgap);
+            draw(y12, x12, rfpart(yend) * xgap, ln.getClr());
+            draw(y12 + 1, x12, fpart(yend) * xgap, ln.getClr());
         } else {
-            draw(x12, y12, rfpart(yend) * xgap);
-            draw(x12, y12 + 1, fpart(yend) * xgap);
+            draw(x12, y12, rfpart(yend) * xgap, ln.getClr());
+            draw(x12, y12 + 1, fpart(yend) * xgap, ln.getClr());
         }
 
         for (double x = x11 + 1; x <= x12 - 1; x++) {
             if (steep) {
-                draw(ipart(intery), x, rfpart(intery));
-                draw(ipart(intery) + 1, x, fpart(intery));
+                draw(ipart(intery), x, rfpart(intery), ln.getClr());
+                draw(ipart(intery) + 1, x, fpart(intery), ln.getClr());
             } else {
-                draw(x, ipart(intery), rfpart(intery));
-                draw(x, ipart(intery) + 1, fpart(intery));
+                draw(x, ipart(intery), rfpart(intery), ln.getClr());
+                draw(x, ipart(intery) + 1, fpart(intery), ln.getClr());
             }
             intery = intery + gradient;
         }
     }
 
-    public void draw(double x, double y, double c) {
+    public void draw(double x, double y, double c, int clr) {
         Graphics gr = img.getGraphics();
-        gr.setColor(new Color(0f, 0f, 0f, (float)c));
+
+        switch (clr) {
+            case 1:
+                gr.setColor(new Color(0f, 0f, 0f, (float) c));
+                break;
+            case 2:
+                gr.setColor(new Color(1f, 0f, 0f, (float) c));
+                break;
+            case 3:
+                gr.setColor(new Color(0f, 0f, 1f, (float) c));
+                break;
+            case 4:
+                gr.setColor(new Color(0f, 1f, 0f, (float) c));
+                break;
+        }
         gr.fillOval((int) x, (int) y, 2, 2);
 
     }

@@ -26,7 +26,7 @@ public class Canvas {
 
     private JFrame window;
     private BufferedImage img;
-    private SolidRenderer wfr = new SolidRenderer();
+    private SolidRenderer sr;
     private List<SolidBase> go = new ArrayList<>();
     private Camera cam;
     private double zoom = 1.2;
@@ -43,6 +43,7 @@ public class Canvas {
     private final double KROK_POSUNU_A_ROTACE = 0.05;
     private final double KROK_ROTACE_KAMERY = Math.toRadians(0.1);
     private int x1, y1;
+    private Mat4 m,v,p;
 
     public Canvas() {
         initGUI();
@@ -254,29 +255,26 @@ public class Canvas {
         cam = cam.withAzimuth(azimuth);
         cam = cam.withZenith(zenith);
 
-        // nastaven� matic
-        // view
-        wfr.setView(cam.getViewMatrix());
-        // projection
+        m = ((new Mat4RotX(rotaceX).mul(new Mat4RotY(rotaceY).mul(new Mat4RotZ(rotaceZ))))
+                .mul(new Mat4Scale(zoom, zoom, zoom))).mul(new Mat4Transl(posunX, posunY, posunZ));
+        v = cam.getViewMatrix();
+
         if (perspective)
-            wfr.setProj(new Mat4PerspRH(1, 1, 1, 1));
+            p = new Mat4PerspRH(1, 1, 1, 1);
         else
-            wfr.setProj(new Mat4OrthoRH(13 * img.getHeight() / img.getWidth(), 13 * img.getHeight() / img.getWidth(),
-                    0.01, 0));
-        // model - zoom, posun, rotace
-        wfr.setModel(((new Mat4RotX(rotaceX).mul(new Mat4RotY(rotaceY).mul(new Mat4RotZ(rotaceZ))))
-                .mul(new Mat4Scale(zoom, zoom, zoom))).mul(new Mat4Transl(posunX, posunY, posunZ)));
+            p = new Mat4OrthoRH(13 * img.getHeight() / img.getWidth(), 13 * img.getHeight() / img.getWidth(),0.01, 0);
+
+        sr = new SolidRenderer(m,v,p);
 
         // vykreslen�
-        if (cube)
-            wfr.draw(new Cube(), img);
+        if (axis)
+            sr.draw(new Axis(), img, 1);
         if (tetraherdron)
-            wfr.draw(new Tetrahedron(), img);
-        if (axis) {
-            wfr.draw(new Axis(), img);
-        }
+            sr.draw(new Tetrahedron(), img, 2);
+        if (cube)
+            sr.draw(new Cube(), img, 3);
         if (krivka != 0)
-            wfr.draw(new Curve(krivka), img);
+            sr.draw(new Curve(krivka), img, 4);
 
         setNotes();
     }

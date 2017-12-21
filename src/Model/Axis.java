@@ -8,9 +8,9 @@ public class Axis extends SolidBase {
     public Axis() {
 
         vertexBuffer.add(new Point3D(0, 0, 0));
-        vertexBuffer.add(new Point3D(5, 0, 0));
-        vertexBuffer.add(new Point3D(0, 5, 0));
-        vertexBuffer.add(new Point3D(0, 0, 5));
+        vertexBuffer.add(new Point3D(3, 0, 0));
+        vertexBuffer.add(new Point3D(0, 3, 0));
+        vertexBuffer.add(new Point3D(0, 0, 3));
 
         indexBuffer.add(0);
         indexBuffer.add(1);
